@@ -1,0 +1,528 @@
+/* Custom property for the accent color */
+:root {
+    --color-neon-blue: #00ccff;
+    --color-neon-purple: #9900ff;
+    --color-text-light: #f0f0f0;
+    --color-text-grey: #aaaaaa;
+    --color-background-dark: #121212;
+}
+
+/* Global Styles and Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-background-dark);
+    color: var(--color-text-light);
+    overflow-x: hidden;
+    /* This creates the overall dark and grainy look */
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0aXBlPSJSZWNpcGUiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTktMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3htcC9tbS8xLjAvIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NkY4QjA1QjU3RjRDMTFFOEE0QTdGN0FFNkE0M0U5RkQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NkY4QjA1QjY3RjRDMTFFOEE0QTdGN0FFNkE0M0U5RkQiPiA8eG1wTU06UmVsaXJkZWRPcHRpb24gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpCRkI0MjU2QzdGNDIxMUU4QTRBN0Y3QUU2QTQzRTlGRCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDpCRkI0MjU2RDdGNDIxMUU4QTRBN0Y3QUU2QTQzRTlGRCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YSkgPD94cGFja2V0IGVuZD0idyI/PtwH6vYAAAAMSURBVHjaYmBgYGYAAgwAApAAYf72lX8AAAAASUVORK5CYII=');
+    background-repeat: repeat;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Typography */
+h1 {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-grey);
+    margin-bottom: 1rem;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    z-index: 100;
+    font-weight: 600;
+    text-transform: uppercase;
+    background: transparent;
+}
+
+.logo {
+    font-size: 1rem;
+    color: var(--color-neon-blue);
+    letter-spacing: 1px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.navbar nav ul li a {
+    font-size: 0.85rem;
+    color: var(--color-text-light);
+    transition: color 0.3s;
+}
+
+.navbar nav ul li a:hover,
+.navbar nav ul li a.active {
+    color: var(--color-neon-blue);
+}
+
+.navbar nav ul li a.active {
+    /* For the 'ONLINE PORTFOLIO' tag */
+    border: 1px solid var(--color-neon-blue);
+    padding: 0.3rem 0.6rem;
+}
+
+.line-separator {
+    width: 3rem;
+    height: 1px;
+    background-color: var(--color-text-light);
+    margin-left: 1.5rem;
+}
+
+
+/* --- General Section Layout --- */
+.content-section {
+    padding: 8rem 5%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.underline {
+    width: 5rem;
+    height: 3px;
+    background-color: var(--color-neon-blue);
+    margin-bottom: 2rem;
+}
+
+/* --- Hero Section (Home) --- */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    padding-top: 12rem;
+    /* UPDATE HERE: Increase bottom padding to prevent overlap with the footer */
+    padding-bottom: 8rem; /* Original sections use 8rem, but we need extra room */
+    padding-left: 4rem;
+    position: relative;
+    /* Neon glow effect background on left side */
+    background: radial-gradient(circle at 15% 50%, rgba(0, 204, 255, 0.2) 0%, transparent 40%),
+                radial-gradient(circle at 80% 50%, rgba(153, 0, 255, 0.1) 0%, transparent 30%);
+}
+
+.hero-content {
+    flex: 1;
+    max-width: 50%;
+}
+
+.greeting {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--color-text-grey);
+}
+
+.title-tag {
+    display: inline-block;
+    color: var(--color-neon-blue);
+    border: 1px solid var(--color-neon-blue);
+    padding: 0.2rem 0.5rem;
+    font-size: 0.8rem;
+    margin-bottom: 2rem;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.hero-image-container {
+    flex: 1;
+    position: relative ;
+    height: 350px; /* Placeholder height */
+    max-width: 40%;
+    background: linear-gradient(to right, var(--color-neon-blue), var(--color-neon-purple));
+    /* border-radius: 5px; Should contain the actual image */
+    overflow: hidden;
+    margin-right: 2rem;
+     box-shadow: 0 0 5px 0px rgba(0, 0, 0, 0.5); /* Start with a very subtle shadow */
+    
+    /* ADD A TRANSITION FOR SMOOTH EFFECT */
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer; /* Optional: indicates interactivity */
+}
+
+/* --- Hover State: NEON GLOW EFFECT --- */
+.hero-image-container:hover {
+    /* Apply the strong neon shadow on hover */
+    box-shadow: 
+        0 0 10px 3px var(--color-neon-blue), /* Inner glow */
+        0 0 20px 7px rgba(0, 217, 255, 0.92); /* Outer glow (optional gradient effect) */
+}
+
+
+/* --- About Section --- */
+.about-section {
+    /* display: flex; */
+    align-items: flex-start;
+    gap: 5rem;
+}
+
+.text-content {
+    flex: 1;
+    max-width: 100%;
+}
+
+.image-with-dots {
+    flex: 1;
+    position: relative;
+    height: 500px;
+    background-color: #222; /* Placeholder for image */
+    background-image: linear-gradient(to right top, #00d2ff, #0088cc); /* Placeholder gradient for image glow */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dot-pattern {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 100px;
+    height: 200px;
+    background-image: radial-gradient(circle, var(--color-neon-blue) 2px, transparent 2px);
+    background-size: 20px 20px;
+    opacity: 0.6;
+}
+
+
+.tags-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tag {
+    padding: 0.5rem 1.2rem;
+    border: 1px solid var(--color-text-grey);
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: border-color 0.3s, color 0.3s;
+    color: var(--color-text-grey);
+}
+
+.tag:hover {
+    border-color: var(--color-neon-blue);
+    color: var(--color-neon-blue);
+}
+
+/* --- Timeline Sections (Education & Experience) --- */
+.timeline-section {
+    /* Neon glow effect background on left/center side */
+    background: radial-gradient(circle at 10% 80%, rgba(153, 0, 255, 0.1) 0%, transparent 30%),
+                radial-gradient(circle at 90% 20%, rgba(0, 204, 255, 0.1) 0%, transparent 30%);
+}
+
+.main-content-area {
+    display: flex;
+    gap: 5rem;
+}
+
+.left-col {
+    flex: 1;
+    max-width: 30%;
+}
+
+.right-col {
+    flex: 2;
+    position: relative;
+}
+
+.time-range {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 6rem;
+    font-weight: 700;
+    opacity: 0.1;
+    color: var(--color-text-light);
+    letter-spacing: 5px;
+    line-height: 1;
+}
+
+.timeline-item {
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: 2.5rem;
+}
+
+.timeline-item:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-neon-blue);
+    border-radius: 50%;
+    box-shadow: 0 0 8px var(--color-neon-blue);
+}
+
+.timeline-item h4 {
+    color: var(--color-text-light);
+}
+
+/* Experience Specific Styles */
+.timeline-item-experience {
+    padding-left: 2rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.timeline-item-experience:before {
+    content: '>>'; /* Custom content icon as seen in image */
+    position: absolute;
+    left: 0;
+    top: 0.1rem;
+    font-size: 1rem;
+    color: var(--color-neon-blue);
+}
+
+.timeline-item-experience h4 {
+    color: var(--color-text-light);
+}
+
+.timeline-item-experience p:not(.description) {
+    color: var(--color-neon-blue);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-item-experience .description {
+    margin-top: 0.5rem;
+    color: var(--color-text-grey);
+    font-size: 0.95rem;
+}
+
+
+/* --- Project Section --- */
+.project-section {
+    position: relative;
+}
+
+.project-grid {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.project-card {
+    flex: 1;
+}
+
+.project-image {
+    height: 200px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+    border-radius: 5px;
+    /* Add a subtle shadow/glow to project images */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    /* KEY FIX: Scales the image to cover the entire box, cropping if necessary */
+    object-fit: cover; 
+    
+    display: block; 
+    border-radius: 5px; 
+}
+
+.project-card h4 {
+    color: var(--color-neon-blue);
+    margin-bottom: 0.5rem;
+}
+
+.side-year {
+    position: absolute;
+    top: 35%;
+    right: 5%;
+    font-size: 8rem;
+    font-weight: 700;
+    opacity: 0.1;
+    color: var(--color-text-light);
+    writing-mode: vertical-rl; /* Text orientation as seen in image */
+    transform: rotate(180deg);
+}
+
+/* --- Contact Section --- */
+.contact-section {
+    text-align: center;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 204, 255, 0.1) 0%, transparent 30%);
+}
+
+.contact-section h2 {
+    font-size: 3rem;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: var(--color-neon-blue);
+    margin-bottom: 3rem;
+    font-style: italic;
+}
+
+.contact-details-grid {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+.contact-item {
+    flex: 1;
+    max-width: 250px;
+}
+
+.contact-item i {
+    font-size: 2.5rem;
+    color: var(--color-neon-blue);
+    margin-bottom: 1rem;
+    /* Subtle glow for the icons */
+    text-shadow: 0 0 8px rgba(0, 204, 255, 0.5);
+}
+
+.contact-item h3 {
+    margin: 0;
+    color: var(--color-text-light);
+}
+
+.contact-item p {
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+    color: var(--color-text-grey);
+}
+
+.bottom-branding {
+    padding-top: 5rem;
+}
+
+.bottom-branding p {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text-light);
+    opacity: 0.1;
+    letter-spacing: 5px;
+    margin-bottom: 0;
+}
+
+/* Style the new RESUME link */
+.navbar nav ul li a.resume-link {
+    /* Remove any existing active styling if present */
+    border-color: none;
+    padding: 0;
+    
+    /* Apply a similar accent styling to the last item */
+    color: var(--color-neon-blue);
+    position: relative;
+    padding-bottom: 5px; /* Space for the underline */
+}
+
+/* Add an accent line below the Resume link to highlight it */
+.navbar nav ul li a.resume-link:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-neon-blue);
+    box-shadow: 0 0 5px var(--color-neon-blue); /* Optional: Neon glow for the line */
+}
+
+
+/* --- Portfolio Footer Line (Repeats in all sections) --- */
+.portfolio-footer {
+    position: absolute;
+    bottom: 2rem;
+    left: 5%;
+    right: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.portfolio-footer .footer-line {
+    flex-grow: 1;
+    height: 1px;
+    background: linear-gradient(to right, var(--color-text-light), transparent 80%);
+    position: relative;
+}
+
+.portfolio-footer .footer-line:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -4px;
+    width: 9px;
+    height: 9px;
+    border: 1px solid var(--color-text-light);
+    border-radius: 50%;
+    background-color: var(--color-background-dark);
+}
+
+.portfolio-footer p {
+    font-size: 0.8rem;
+    margin-left: 2rem;
+    color: var(--color-text-light);
+    opacity: 0.8;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+}
+
+/* Helper for Image Grin/Noise effect on placeholders */
+.grain-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Media\ \(2\).jpg');
+    opacity: 1;
+    pointer-events: none;
+}
